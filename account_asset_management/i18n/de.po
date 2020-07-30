@@ -133,6 +133,13 @@ msgid "Asset Lines"
 msgstr "Anlagenpositionen"
 
 #. module: account_asset_management
+#: model:ir.actions.server,name:account_asset_management.ir_cron_assets_generator_ir_actions_server
+#: model:ir.cron,cron_name:account_asset_management.ir_cron_assets_generator
+#: model:ir.cron,name:account_asset_management.ir_cron_assets_generator
+msgid "Asset Management: Generate assets"
+msgstr ""
+
+#. module: account_asset_management
 #: model:ir.model.fields,field_description:account_asset_management.field_account_asset__name
 msgid "Asset Name"
 msgstr "Anlagegut Bezeichnung"
@@ -1116,6 +1123,12 @@ msgstr ""
 "\n"
 "Der Anlagenbuchwert wird wie folgt berechnet:\n"
 "Anschaffungspreis - Bezugskosten."
+
+#. module: account_asset_management
+#: code:addons/account_asset_management/models/account_move.py:0
+#, python-format
+msgid "This invoice created the asset(s): %s"
+msgstr ""
 
 #. module: account_asset_management
 #: model:ir.model.fields,field_description:account_asset_management.field_account_asset__method_time
