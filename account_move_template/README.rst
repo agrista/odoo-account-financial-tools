@@ -35,6 +35,26 @@ the amount of every input lines.
 The journal entry form allows lo load, through a wizard,
 the template to use and the amounts to fill.
 
+**Notable features:**
+
+This module enhance the capability of module account_move_template with following features,
+
+#. Optional account for negative amount.
+
+    When the Journal entry is created, and credit/debit is negative value, change debit/credit
+    side and use the opt_account_id
+
+#. Allow overwrite move line values with overwrite dict.
+
+    Normally, the journal items created by the template will require user input on wizard.
+    This feature allow passing the overwrite values with a dictionary.
+    This is particularly useful when the wizard is called by code.
+
+    Sample of dictionary to overwrite move lines::
+
+      {'L1': {'partner_id': 1, 'amount': 100, 'name': 'some label'},
+       'L2': {'partner_id': 2, 'amount': 200, 'name': 'some label 2'}, }
+
 **Table of contents**
 
 .. contents::
@@ -55,6 +75,7 @@ To use an existing template:
 
 #. Go to *Invoicing / Accounting / Miscellaneous / Create Entry from Template*
 #. Select one of the available templates.
+#. As option, you can overwrite output lines with dict, i.e., {"L1": {"partner": 1}}
 #. Complete the entries according to the template and click on the button *Generate Journal Entry*.
 
 Bug Tracker
@@ -76,7 +97,7 @@ Authors
 * Agile Business Group
 * Aurium Technologies
 * Vauxoo
-* Eficent
+* ForgeFlow
 * Akretion
 
 Contributors
@@ -98,11 +119,15 @@ Module Contributors
 * Alex Comba <alex.comba@agilebg.com> (Port to V8)
 * Guewen Baconnier <guewen.baconnier@camptocamp.com>
 * Raf Ven <raf.ven@dynapps.be>  (port to v11)
-* Jordi Ballester <jordi.ballester@eficent.com> (EFICENT)
+* Jordi Ballester <jordi.ballester@forgeflow.com> (ForgeFlow)
 * `Sygel <https://www.sygel.es>`_:
 
   * Harald Panten <harald.panten@sygel.es>
   * Valentin Vinagre <valentin.vinagre@sygel.es>
+
+* `Ecosoft <http://ecosoft.co.th>`_:
+
+  * Kitti U. <kittiu@ecosoft.co.th> (Add context overwrite)
 
 Maintainers
 ~~~~~~~~~~~
